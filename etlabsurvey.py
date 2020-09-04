@@ -1,5 +1,7 @@
 from etlabautomation import EtlabBot
 
+#Updated for Preliminary Survey (T7A) | September 5 2020
+
 #User Credentials
 username = 'username'
 password = 'password'
