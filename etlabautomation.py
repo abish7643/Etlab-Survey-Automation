@@ -27,7 +27,7 @@ class EtlabBot:
         print("------------ Delay of 5s -----------")
         time.sleep(5)
 
-    def doTeacherEvaluationSurveys(self, surveyToBeDone, totalSubjects, AnswerValueHTML):
+    def doTeacherEvaluationSurveys(self, surveyToBeDone, totalSubjects, AnswerValueHTML, delay):
         bot = self.bot
         bot.get(surveyToBeDone)
         totalQuestions = len(AnswerValueHTML)
@@ -38,28 +38,28 @@ class EtlabBot:
             print('------------ Subject {} ------------'.format(i+1)) #Range Means From 0 to i-1, So Making it 1 + 0
             currentSubjectorName = 'yt{}'.format(i) #Selects The Button "Answer Questions"
             currentSubjectorSelector = bot.find_element_by_name(currentSubjectorName)
-            currentSubjectorSelector.click();
-            print("------------ Delay of 5s -----------") #wait till answer loads
-            time.sleep(5)
+            currentSubjectorSelector.click()
+            print("------------ Delay of {}s -----------".format(delay)) #wait till answer loads
+            time.sleep(delay)
             
             quesionNumber = 1;
             #Iterating Through Each Question
             for j in AnswerValueHTML:
                 print('------------ Question {} ------------'.format(quesionNumber))
                 answerSelector = bot.find_element_by_xpath(".//input[@value='{}']".format(j)) #Selecting Required Answer
-                answerSelector.click();
+                answerSelector.click()
                 quesionNumber += 1
 
             print("------- Selected Req Answers -------")
-            print("------------ Delay of 5s -----------") #Wait to Verify
-            time.sleep(5)
+            print("------------ Delay of {}s -----------".format(delay)) #Wait to Verify
+            time.sleep(delay)
 
             submitButtonName = 'yt0' #Name Attribute Of Submit Button From HTML
             submitButton = bot.find_elements_by_name(submitButtonName)
-            submitButton.click()
+            submitButton[0].click()
 
-            print("------------ Delay of 5s -----------")
-            time.sleep(5)
+            print("------------ Delay of {}s -----------".format(delay))
+            time.sleep(delay)
 
         print("------------------------------------")
         print("--------- Survey Completed ---------")
