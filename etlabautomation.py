@@ -42,7 +42,7 @@ class EtlabBot:
             print("------------ Delay of {}s -----------".format(delay)) #wait till answer loads
             time.sleep(delay)
             
-            quesionNumber = 1;
+            quesionNumber = 1
             #Iterating Through Each Question
             for j in AnswerValueHTML:
                 print('------------ Question {} ------------'.format(quesionNumber))

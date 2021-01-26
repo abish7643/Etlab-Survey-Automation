@@ -8,9 +8,9 @@ password = 'password'
 loginlink = 'https://sctce.etlab.in/user/login'
 
 #Survey
-surveylink = 'https://sctce.etlab.in/survey/user/answer/394' 
+surveylink = 'https://sctce.etlab.in/survey/user/answer/452' 
 totalSubjects = 12 #Total Number Of Subjects in Survey
-answerReference = [5727, 5729, 5731, 5733, 5737, 5741, 5743, 5746, 5749] #Required Answer To Be Filled (Get Answer Value From HTML)
+answerReference = [450, 455, 460, 465, 469, 472, 476, 479, 483, 487, 491] #Required Answer To Be Filled (Get Answer Value From HTML)
 
 #Bot
 delay = 2
