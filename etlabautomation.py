@@ -27,9 +27,17 @@ class EtlabBot:
         print("------------ Delay of 5s -----------")
         time.sleep(5)
 
-    def doTeacherEvaluationSurveys(self, surveyToBeDone, totalSubjects, AnswerValueHTML, delay):
+    def doTeacherEvaluationSurveys(self, surveyToBeDone, AnswerValueHTML, delay):
         bot = self.bot
         bot.get(surveyToBeDone)
+
+        print("------------ Delay of {}s -----------".format(delay)) #Wait Till Survey Page Loads
+        time.sleep(delay)
+
+        rows = bot.find_elements_by_id("section-form")
+        totalSubjects = len(rows)
+        print('----- {} Subjects To Be Done ------'.format(totalSubjects))
+
         totalQuestions = len(AnswerValueHTML)
         print('----- {} Questions To Be Done ------'.format(totalQuestions))
 

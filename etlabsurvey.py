@@ -4,12 +4,11 @@ from etlabautomation import EtlabBot
 
 #User Credentials
 username = 'username'
-password = 'password'
+password = 'paswword'
 loginlink = 'https://sctce.etlab.in/user/login'
 
 #Survey
-surveylink = 'https://sctce.etlab.in/survey/user/answer/499' 
-totalSubjects = 8 #Total Number Of Subjects in Survey
+surveylink = 'https://sctce.etlab.in/survey/user/answer/499'
 
 #Required Answer To Be Filled (Get Answer Value From HTML)
 answerReference = [5727, 5729, 5731, 5733, 5737, 5741, 5743, 5746, 5749] #S8
@@ -19,4 +18,4 @@ answerReference = [5727, 5729, 5731, 5733, 5737, 5741, 5743, 5746, 5749] #S8
 delay = 2
 SurveyBot = EtlabBot(username, password) #Create an Object & Pass Your Username and Password
 SurveyBot.login(loginlink) #Pass The Login Link
-SurveyBot.doTeacherEvaluationSurveys(surveylink, totalSubjects, answerReference, delay) #Add The Survey Link & Add the Number Of Subjects to Be Filled
+SurveyBot.doTeacherEvaluationSurveys(surveylink, answerReference, delay) #Add The Survey Link & Add the Number Of Subjects to Be Filled

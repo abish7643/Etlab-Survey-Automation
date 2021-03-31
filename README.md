@@ -23,4 +23,4 @@ Made Using Selenium &amp; Python3
 
 `python3 etlabsurvey.py`
 
-> Note: Replace username, password, surveylink, totalsubjects, answerReference in etlabsurvey.py file depending upon your requirement.
+> Note: Replace username, password, surveylink, answerReference in etlabsurvey.py file depending upon your requirement.
