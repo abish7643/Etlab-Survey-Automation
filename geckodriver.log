@@ -3,3 +3,14 @@
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1611677439454	Marionette	INFO	Listening on port 46843
 1611677439589	Marionette	WARN	TLS certificate errors will be ignored for this session
+1611677923077	Marionette	INFO	Stopped listening on port 46843
+1617175213309	geckodriver	INFO	Listening on 127.0.0.1:54327
+1617175213316	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepnKQPZ"
+[GFX1-]: More than 1 GPU detected via PCI, cannot deduce vendor
+[GFX1-]: PCI candidate 0x1002/0x15d8
+[GFX1-]: PCI candidate 0x10de/0x1f91
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617175217048	Marionette	INFO	Listening on port 43847
+1617175217167	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617175231145	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
