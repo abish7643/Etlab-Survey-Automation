@@ -10,13 +10,16 @@ Made Using Selenium &amp; Python3
 ### Geckdriver Installation (Linux)
 
 * Download the latest release of geckdriver for linux and extract the file.
-`tar -xvf geckodriver-v0.29.0-linux64.tar.gz` (Replace the filename with your downloaded one.)
+
+    `tar -xvf geckodriver-v0.29.0-linux64.tar.gz`
 
 * Make the extracted binary executable.
-`chmod +x geckodriver`
+    
+    `chmod +x geckodriver`
 
 * Move the file /usr/local/bin/ directory.
-`sudo mv geckodriver /usr/local/bin/`
+    
+    `sudo mv geckodriver /usr/local/bin/`
  
 
 ### Run The Program By,

@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
+
 class EtlabBot:
     def __init__(self, username, password):
         print("-------------------------------------")
@@ -31,7 +32,7 @@ class EtlabBot:
         bot = self.bot
         bot.get(surveyToBeDone)
 
-        print("------------ Delay of {}s -----------".format(delay)) #Wait Till Survey Page Loads
+        print("------------ Delay of {}s -----------".format(delay))  # Wait Till Survey Page Loads
         time.sleep(delay)
 
         rows = bot.find_elements_by_id("section-form")
@@ -41,28 +42,30 @@ class EtlabBot:
         totalQuestions = len(AnswerValueHTML)
         print('----- {} Questions To Be Done ------'.format(totalQuestions))
 
-        #Iterating Through Each Subject
+        # Iterating Through Each Subject
         for i in range(totalSubjects):
-            print('------------ Subject {} ------------'.format(i+1)) #Range Means From 0 to i-1, So Making it 1 + 0
-            currentSubjectorName = 'yt{}'.format(i) #Selects The Button "Answer Questions"
-            currentSubjectorSelector = bot.find_element_by_name(currentSubjectorName)
-            currentSubjectorSelector.click()
-            print("------------ Delay of {}s -----------".format(delay)) #wait till answer loads
+            print("------------ Delay of {}s -----------".format(delay))
+            print('------------ Subject {} ------------'.format(i + 1))  # Range Means From 0 to i-1, So Making it 1 + 0
+            currentSubjectName = 'yt{}'.format(i)  # Selects The Button "Answer Questions"
+            currentSubjectSelector = bot.find_element_by_name(currentSubjectName)
+            currentSubjectSelector.click()
+            print("------------ Delay of {}s -----------".format(delay))  # wait till answer loads
             time.sleep(delay)
-            
-            quesionNumber = 1
-            #Iterating Through Each Question
+
+            questionNumber = 1
+            # Iterating Through Each Question
             for j in AnswerValueHTML:
-                print('------------ Question {} ------------'.format(quesionNumber))
-                answerSelector = bot.find_element_by_xpath(".//input[@value='{}']".format(j)) #Selecting Required Answer
+                print('------------ Question {} ------------'.format(questionNumber))
+                answerSelector = bot.find_element_by_xpath(
+                    ".//input[@value='{}']".format(j))  # Selecting Required Answer
                 answerSelector.click()
-                quesionNumber += 1
+                questionNumber += 1
 
             print("------- Selected Req Answers -------")
-            print("------------ Delay of {}s -----------".format(delay)) #Wait to Verify
+            print("------------ Delay of {}s -----------".format(delay))  # Wait to Verify
             time.sleep(delay)
 
-            submitButtonName = 'yt0' #Name Attribute Of Submit Button From HTML
+            submitButtonName = 'yt0'  # Name Attribute Of Submit Button From HTML
             submitButton = bot.find_elements_by_name(submitButtonName)
             submitButton[0].click()
 
